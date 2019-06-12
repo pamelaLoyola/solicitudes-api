@@ -48,14 +48,15 @@ private static final Logger logger = LoggerFactory.getLogger(SolicitudRepository
 		return solicitudes;
 	}
 	
-	public Solicitud findByIdUsuario(String idUsuario) {
+	public List<Solicitud> findByIdUsuario(String idUsuario) {
 		
 		logger.info("obtener: " + idUsuario);
 		
 		String sql = "select * from solicitudes where idUsuario = ?";
 		
-		Solicitud solicitud = jdbcTemplate.queryForObject(sql, new RowMapper<Solicitud>() {
+			List<Solicitud> solicitudes = jdbcTemplate.query(sql, new RowMapper<Solicitud>() {
 			
+			@Override
 			public Solicitud  mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Solicitud solicitud = new Solicitud();
 				solicitud.setId(rs.getInt("id"));
@@ -65,16 +66,16 @@ private static final Logger logger = LoggerFactory.getLogger(SolicitudRepository
 				solicitud.setMotivo(rs.getString("motivo"));
 				solicitud.setImagen(rs.getString("imagen"));
 				solicitud.setEstado(rs.getString("estado"));
-				
+
 				return solicitud;
 				
 			}
 			
 		}, idUsuario);
 		
-		logger.info("solicitud buscada" + solicitud);
+		logger.info("solicitud buscada" + solicitudes);
 		
-		return solicitud;
+		return solicitudes;
 	}
 	
 	public void crear(Solicitud solicitud) {

@@ -18,7 +18,7 @@ public class SolicitudService{
 		return sr.listar();
 	}
 	
-	public Solicitud findByIdUsuario(String idUsuario) {
+	public List<Solicitud> findByIdUsuario(String idUsuario) {
 		return sr.findByIdUsuario(idUsuario);
 	}
 	

@@ -45,10 +45,10 @@ public class SolicitudController {
 		}
 		
 		@GetMapping("/solicitudes/{idUsuario}")
-		public Solicitud obtener(@PathVariable String idUsuario) {
+		public List<Solicitud> obtener(@PathVariable String idUsuario) {
 			logger.info("call obtener: " + idUsuario);
 			
-			Solicitud solicitud = solicitudService.findByIdUsuario(idUsuario);
+			List<Solicitud> solicitud = solicitudService.findByIdUsuario(idUsuario);
 			
 			return solicitud;
 		}
