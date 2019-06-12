@@ -18,8 +18,12 @@ public class SolicitudService{
 		return sr.listar();
 	}
 	
-	public Solicitud findByIdUsuario(Integer id) {
-		return sr.findByIdUsuario(id);
+	public Solicitud findByIdUsuario(String idUsuario) {
+		return sr.findByIdUsuario(idUsuario);
+	}
+	
+	public void crear(Solicitud solicitud) {
+		sr.crear(solicitud);
 	}
 
 }

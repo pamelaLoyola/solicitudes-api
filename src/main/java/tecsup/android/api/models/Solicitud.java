@@ -54,8 +54,8 @@ public class Solicitud {
 	}
 	@Override
 	public String toString() {
-		return "Solicitud [id=" + id + ", idUsuario=" + idUsuario + ", correo=" + correo + ", tipoSolicitud=" + tipoSolicitud
-				+ ", motivo=" + motivo + ", imagen=" + imagen + ", estado=" + estado + "]";
+		return "Solicitud [id=" + id + ", idUsuario=" + idUsuario + ", correo=" + correo + ", tipoSolicitud="
+				+ tipoSolicitud + ", motivo=" + motivo + ", imagen=" + imagen + ", estado=" + estado + "]";
 	}
 	
 	
